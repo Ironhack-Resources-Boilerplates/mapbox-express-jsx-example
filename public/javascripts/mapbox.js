@@ -1,7 +1,7 @@
 "use strict";
 
 const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1IjoibmNvZGVyOTIiLCJhIjoiY2pkbmRmdno4MGQ2ODJ4bWtxcG02dnk1ciJ9.DehQETKEOyrOha4hqclYvg";
+  "pk.eyJ1Ijoicm9zcy11LXUiLCJhIjoiY2s2cTc4azllMGV1ZDNvbjl4ZHpxOWtxdSJ9.iAVgfKoTYDSpcFS1IhGHCA";
 
 const main = () => {
   mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
@@ -30,8 +30,8 @@ const main = () => {
     .then((result) => {
       result.data.forEach((restaurant) => {
         new mapboxgl.Marker()
-          .setLngLat(restaurant.location.coordinates.reverse())
-          // .setLngLat(restaurant.location.coordinates)
+          // .setLngLat(restaurant.location.coordinates.reverse())
+          .setLngLat(restaurant.location.coordinates)
           .addTo(map);
       });
     })

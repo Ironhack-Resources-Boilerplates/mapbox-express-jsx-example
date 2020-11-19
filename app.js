@@ -7,7 +7,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-
+const erv = require("express-react-views");
 const siteRouter = require("./routes/siteRouter");
 const apiRouter = require("./routes/apiRouter");
 
@@ -20,9 +20,10 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: true,
 });
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
+// VIEW ENGINE SETUP
+app.set("views", __dirname + "/views");
+app.set("view engine", "jsx");
+app.engine("jsx", erv.createEngine());
 
 // MIDDLEWARE
 app.use(logger("dev"));

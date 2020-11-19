@@ -2,9 +2,8 @@
 
 require('dotenv').config();
 const mongoose = require("mongoose");
-const Restaurant = require("../models/restaurant");
+const Restaurant = require("./../models/Restaurant.model");
 
-const { DB_NAME } = process.env; // Get the DB_NAME value stored in .env file
 
 const restaurants = [
   {
