@@ -1,4 +1,4 @@
-# Using Mapbox GL JS with Express and Handlebars
+# Using Mapbox GL JS with Express and JSX
 
 <br>
 
